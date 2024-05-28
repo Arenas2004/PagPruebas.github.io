@@ -1,110 +1,191 @@
+/* Estilos globales */
 body {
-    font-family: monospace;
+    font-family: Arial, sans-serif;
     color: #333;
-    font-size: 1.3rem;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-h1 {
-    /*
-    background-color: rgb(233, 205, 23);
+h1, h2, h3 {
+    margin: 1rem 0;
+
+}
+
+.container h1 {
     color: white;
-    padding: 20px;
-    */
-    text-align: left;
-    line-height: 1.3em;
-    font-size: 2rem;
+    background-color: #0b72e0;
+    padding: 3rem;
 
 }
 
-p{
-    margin-bottom: 1.6em;
+.container h2 {
+    color: white;
+    background-color: #14b7c9;
+    padding: 3rem;
+}
+
+.container h3{
+    color: white;
+    background-color: #165598;
+    padding: 3rem;
+}
+
+p {
+    margin-bottom: 1rem;
 }
 
 .container {
     width: 90%;
-    max-width: 850px;
+    max-width: 1200px;
     margin: 0 auto;
-}
-.container h1{
-    background-color: #68c3f4;
-    color: white;
-    border-radius: 2rem;
-    padding: 0.6rem;
+    padding: 1rem;
 }
 
-.container h2{
-    background-color: #4a81f8;
-    color: white;
-    border-radius: 2rem;
-    padding: 0.6rem;
-}
-
-.container h3{
-    background-color: rgb(62, 148, 194);
-    color: white;
-    border-radius: 2rem;
-    padding: 0.6rem;
-}
-
+/* Estilos específicos */
 .header {
     background: #0c9ec6;
-    color: azure;
-    padding: 2rem 0;
+    color: white;
+    padding: 1rem;
     position: fixed;
-    left: 0;
     top: 0;
-    right: 0;
-}
-    .header a {
-        color: #ffffff;
-        text-decoration: none;
+    width: 100%;
+    z-index: 1000;
 }
 
 .logo-nav-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    flex-wrap: wrap;
 }
 
-.logo-img {
-    width: 15.2rem;
-    height: 4.2rem;
+.logo img {
+    height: 50px;
 }
 
 .navigation ul {
+    display: flex;
     margin: 0;
     padding: 0;
     list-style: none;
 }
+
+.navigation ul li {
+    margin-left: 1rem;
+}
+
+.navigation ul li a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+}
+
+.navigation ul li a:hover {
+    background-color: #0b72e0;
+    transition: background-color 0.3s;
+}
+
+.menu-ico {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+/* Estilos para el main content */
+.main {
+    padding-top: 5rem;
+}
+
+.container-baner {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.baner-img {
+    width: 100%;
+    height: auto;
+    max-width: 800px;
+    border-radius: 10px;
+    border: 5px solid #0b72e0;
+    margin: 0 auto;
+}
+
+.img-objetivo-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.img-objetivo-list li {
+    flex: 1 1 calc(50% - 1rem);
+    box-sizing: border-box;
+}
+
+/* Estilos para el footer */
+.footer {
+    background: #e4e3e3;
+    padding: 1rem 0;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Media Queries */
+@media (max-width: 992px) {
     .navigation ul li {
-        display: inline-block;
+        margin-left: 0.5rem;
     }
-        .navigation ul li a {
-            display: block;
-            padding: 0.5rem 1rem;
-            border-radius: 15px;
-            
-        }
 
-        .navigation a:hover{
-            background-color: #0b72e0;
-            padding: auto;
-            transition: all 0.4s linear;
+    .navigation ul li a {
+        padding: 0.5rem;
+    }
 }
 
-.logo {
-    letter-spacing: 5px;
-    font-size: 1.3rem;
-}
-.logo img{
-    height: 6rem;
-    width: 14.5rem;  
+@media (max-width: 768px) {
+    .logo-nav-container {
+        flex-wrap: wrap;
+    }
+
+    .menu-ico {
+        display: block;
+    }
+
+    .navigation ul {
+        display: none;
+        width: 100%;
+    }
+
+    .navigation ul.show {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navigation ul li {
+        margin: 0;
+        text-align: center;
+    }
 }
 
-.menu-ico{
-    display: block;
+@media (max-width: 480px) {
+    .container {
+        width: 100%;
+        padding: 0.5rem;
+    }
+
+    .img-objetivo-list li {
+        flex: 1 1 100%;
+    }
+
+    .main {
+        padding-top: 6rem;
+    }
 }
+
+/* esto no hay que borrarlo*/
 
 .logo:hover {
     background-color: #0b72e0;
@@ -113,71 +194,60 @@ p{
     transition: all 0.5s linear;
 }
 
-.main {
-    padding-top: 10rem;
-}
-
 .baner-img {
-    align-self: center;
-    width: 50rem;
-    height: 25rem;
+    /*align-self: center;*/
+    width: 65rem;  /*largo*/
+    height: 30rem; /*ancho*/
     background: #0c9ec6;
     border-radius: 2rem;
     border: #0b72e0 solid 1rem;
     padding: 1rem;
+    margin: 0 auto;
 }
 
-.footer {
-    background: #e4e3e3;
-    padding: 2rem 0;
-    text-align: center;
-    margin-top: 6rem;
+.paq-list {
+    display: flex;
+    justify-content: space-between; /* Opcional: Para espaciar las imágenes */
+    list-style: none; /* Quita los puntos de la lista */
+    padding: 0; /* Quita el padding por defecto de la lista */
+    margin: 0; /* Quita el margen por defecto de la lista */
 }
 
-@media only screen and (max-width: 767px) {
-    .menu-ico{
-        display: block;
-        cursor: pointer;
-        padding: 0.5rem 1rem;
-    }
-    .navigation{
-        width: 100%;
-        margin-top: 1rem;
-    }
-
-    .navigation ul {
-        display: none;
-    }
-
-    .navigation ul.show {
-        display: block;
-    }
-    .menu-ico:hover {
-        background: #ababab;
-        padding: auto;
-        border-radius: 20px;
-    }
-
-    .navigation ul li {
-            display: block;
-        }
-            .navigation ul li a {
-                display: block;
-                padding: 0.5rem 1rem;
-                border-radius: 15px;
-            }
-    
-            .navigation a:hover{
-                background-color: #ccc;
-                padding: auto;
-                transition: all 0.4s linear;
-    }
+.paq-list li{
+    display: flex;
+    list-style: none;
+    margin: 0;
 }
 
-.menu-ico-ocultar {
-    color: #fbfbfb00;
-    text-align: left;
+.paq-list img{
+    max-width: 100%; /* Asegura que las imágenes no sean más anchas que su contenedor */
+    height: auto; /* Mantiene la proporción de las imágenes */
 }
 
+#paq-div:hover {
+    border: 5px solid;
+    border-image: linear-gradient(45deg, #f06, #4a90e2);
+    border-image-slice: 1;
+}
+
+/* ---------------------------------------------------------------*/ 
+
+.paq-list-cart {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.paq-list-cart li{
+    display: flex;
+    list-style: none;
+    margin: 0;
+}
+
+.paq-list-cart {
+    border-radius: 0%;
+}
 
 
